@@ -1,0 +1,13 @@
+isr-snowflake-pipeline/
+├── README.md
+├── docs/
+│   └── architecture_diagram.png
+├── data/
+│   └── sample_uav_payload.json
+├── sql/
+│   ├── create_staging_tables.sql
+│   ├── transform_isr_data.sql
+│   ├── create_materialized_views.sql
+│   └── snowpipe_setup.sql
+└── streamlit/
+    └── dashboard.py
