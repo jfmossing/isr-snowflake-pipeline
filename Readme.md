@@ -1,32 +1,32 @@
-# 🛰️ ISR Data Pipeline Simulation with Snowflake
+# ISR Data Pipeline Simulation with Snowflake
 
-This project simulates a defense-style ISR (Intelligence, Surveillance, Reconnaissance) data pipeline using Snowflake. It models how UAV telemetry data can be ingested, transformed, and visualized in real time to support mission-critical decision-making.
+This project simulates an ISR (Intelligence, Surveillance, Reconnaissance) data pipeline using Snowflake. It models how UAV telemetry data can be ingested, transformed, and visualized in real time to support mission-critical decision-making.
 
 ---
 
-## 🧭 Scenario
+## Scenario
 
-A joint operations center receives telemetry from 10 ISR sensors (e.g., MQ-9 Reaper UAVs). The goal is to:
+A joint operations center receives telemetry from 10 ISR sensors ( MQ-9 Reaper UAVs). 
 - Ingest raw JSON payloads into Snowflake via Snowpipe
-- Transform and enrich the data for operational analysis
+- Transform the data for operational analysis
 - Enable real-time dashboards and mission replay
 
 ---
 
-## 🛠️ Architecture Overview
+## Architecture Overview
 
 ![Architecture Diagram](docs/architecture_diagram.png)
 
 **Flow:**
 1. UAV sensors drop JSON files into AWS S3
 2. Snowpipe auto-ingests into a raw staging table
-3. SQL transformations normalize and enrich the data
-4. Materialized views expose mission alerts
+3. SQL transformations normalize and enrich the data by adding other Intel sources (thresher)
+4. Show results of Query in a materialized views for mission alerts
 5. Streamlit dashboard visualizes real-time ISR activity
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
 - `sql/`: Snowflake DDL and transformation scripts
 - `data/`: Sample UAV JSON payloads
@@ -35,7 +35,7 @@ A joint operations center receives telemetry from 10 ISR sensors (e.g., MQ-9 Rea
 
 ---
 
-## 🛰️ Sample Payload
+## Sample Payload
 
 ```json
 {
